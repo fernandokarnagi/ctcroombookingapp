@@ -1,0 +1,43 @@
+<ion-view view-title="Make a Booking" cache-view="false">
+  <ion-content class="padding">
+    
+    <form ng-submit="findRoomForBooking(booking)">
+        <div class="list">	
+            <label class="item item-input">
+                <span class="input-label">Date</span>
+                <input type="date"  ng-model="booking.date">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Time (1 to 24)</span>
+                <input type="number"  ng-model="booking.time">
+            </label>
+             <label class="item item-input">
+                <span class="input-label">Duration (in hour)</span>
+                <input type="number" ng-model="booking.duration">
+            </label>
+             <label class="item item-input">
+                <span class="input-label">Number of Attendees</span>
+                <input type="number" ng-model="booking.noOfAttendees">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Facilities</span> 
+            </label>
+            <ion-checkbox ng-repeat="facility in facilitiesList"
+                 ng-model="item.checked" 
+                 ng-checked="item.checked">
+		       {{ facility.text }}
+		     </ion-checkbox>
+           <label class="item item-input">
+                <span class="input-label">Purpose</span>
+                <input  type="text" ng-model="booking.purpose">
+            </label>
+            
+        </div>
+        <div class="list">
+          <button type="submit" class="button button-block button-positive">Find available room</button>
+        </div>
+      </form>
+
+    </ion-content>
+    
+</ion-view>

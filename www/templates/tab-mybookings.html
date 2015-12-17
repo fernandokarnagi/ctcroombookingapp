@@ -1,0 +1,14 @@
+<ion-view view-title="My Bookings" cache-view="false">
+  <ion-content >
+    <ion-list >
+      <ion-item class="item-icon-right" ng-repeat="booking in bookings" type="item-text-wrap" ng-click="cancelMyBooking(booking)">
+        <h2>Duration: {{booking.startDt}} - {{booking.endDt}}</h2>
+        <p>Room: {{booking.room}}</p>
+        <p>Purpose: {{booking.purpose}}</p>
+        <p>Number of Attendees: {{booking.noOfAttendees}}</p>
+        <p>Status: {{booking.status}}</p>
+        <i class="icon ion-ios-close"><h4></h4></i> 
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

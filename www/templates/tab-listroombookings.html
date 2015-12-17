@@ -1,0 +1,35 @@
+<ion-view view-title="Room Bookings" cache-view="false">
+
+	<ion-nav-buttons side="right">
+      <button class="button button-icon icon ion-ios-compose-outline" ng-click="bookRoom(room)">
+       	Book
+      </button>
+    </ion-nav-buttons>
+    
+    
+  <ion-content >
+  	<div class="padding">
+  	<p >
+      {{room.name}}
+    </p>
+    <p >
+      Location: {{room.location}}
+    </p>
+    <p>
+      Maximum Capacity: {{room.maximum}}
+    </p>
+ <p>
+      Active bookings:
+    </p>
+    </div>
+   
+    <ion-list >
+      <ion-item class="item-icon-right" ng-repeat="booking in bookings" type="item-text-wrap" ng-click="sendMessageToBooker(booking)">
+        <h2>Duration: {{booking.startDt}} - {{booking.endDt}}</h2>
+        <p>Booker: {{booking.booker}}</p>
+        <p>Purpose: {{booking.purpose}}</p>
+        <i class="icon ion-android-notifications-none"><h4>Notify</h4></i> 
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
